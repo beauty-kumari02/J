@@ -1,0 +1,108 @@
+WEEK – 2
+Question 1
+
+Question:
+Write a Java program to find the factorial of a given number.
+
+Program:
+
+class Factorial {
+    public static void main(String args[]) {
+        int n = 5;
+        int fact = 1;
+
+        for(int i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
+
+        System.out.println("Factorial of " + n + " = " + fact);
+    }
+}
+
+
+Output:
+
+Factorial of 5 = 120
+
+
+Explanation:
+Factorial of a number is the multiplication of all numbers from 1 to n.
+Here: 5! = 1 × 2 × 3 × 4 × 5 = 120.
+
+Question 2
+
+Question:
+Write a Java program to print Fibonacci series up to n terms.
+
+Program:
+
+class Fibonacci {
+    public static void main(String args[]) {
+        int n = 7;
+        int a = 0, b = 1, c;
+
+        System.out.print(a + " " + b);
+
+        for(int i = 3; i <= n; i++) {
+            c = a + b;
+            System.out.print(" " + c);
+            a = b;
+            b = c;
+        }
+    }
+}
+
+
+Output:
+
+0 1 1 2 3 5 8
+
+
+Explanation:
+In Fibonacci series, each number is the sum of the previous two numbers.
+
+Question 3
+
+Question:
+Create a Calculator class with methods add, sub, mul and div to perform arithmetic operations on two integers.
+
+Program:
+
+class Calculator {
+
+    void add(int a, int b) {
+        System.out.println("Addition = " + (a + b));
+    }
+
+    void sub(int a, int b) {
+        System.out.println("Subtraction = " + (a - b));
+    }
+
+    void mul(int a, int b) {
+        System.out.println("Multiplication = " + (a * b));
+    }
+
+    void div(int a, int b) {
+        System.out.println("Division = " + (a / b));
+    }
+
+    public static void main(String args[]) {
+        Calculator c = new Calculator();
+        c.add(20, 10);
+        c.sub(20, 10);
+        c.mul(20, 10);
+        c.div(20, 10);
+    }
+}
+
+
+Output:
+
+Addition = 30
+Subtraction = 10
+Multiplication = 200
+Division = 2
+
+
+Explanation:
+Each method performs a different arithmetic operation using two integer values.

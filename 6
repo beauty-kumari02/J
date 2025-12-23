@@ -1,0 +1,135 @@
+WEEK – 6
+Question 1
+
+Question:
+Write a Java program to show the application of simple inheritance.
+
+Program:
+
+class Parent {
+    void show() {
+        System.out.println("This is Parent class");
+    }
+}
+
+class Child extends Parent {
+    void display() {
+        System.out.println("This is Child class");
+    }
+
+    public static void main(String args[]) {
+        Child obj = new Child();
+        obj.show();
+        obj.display();
+    }
+}
+
+
+Output:
+
+This is Parent class
+This is Child class
+
+
+Explanation:
+In simple inheritance, one child class inherits properties of one parent class.
+
+Question 2
+
+Question:
+Create three classes Figure, Rectangle and Square where Rectangle and Square extend Figure.
+Calculate the area of Rectangle and Square.
+
+Program:
+
+class Figure {
+    int length, breadth;
+
+    void area() {
+        System.out.println("Area not defined");
+    }
+}
+
+class Rectangle extends Figure {
+    Rectangle(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    void area() {
+        System.out.println("Area of Rectangle = " + (length * breadth));
+    }
+}
+
+class Square extends Figure {
+    Square(int a) {
+        length = a;
+    }
+
+    void area() {
+        System.out.println("Area of Square = " + (length * length));
+    }
+}
+
+class Main {
+    public static void main(String args[]) {
+        Rectangle r = new Rectangle(5, 4);
+        Square s = new Square(6);
+
+        r.area();
+        s.area();
+    }
+}
+
+
+Output:
+
+Area of Rectangle = 20
+Area of Square = 36
+
+
+Explanation:
+Both Rectangle and Square inherit from the Figure class and override the area() method.
+
+Question 3
+
+Question:
+Write a Java program to show the implementation of multilevel inheritance using Car, Maruti and Alto classes.
+
+Program:
+
+class Car {
+    void carType() {
+        System.out.println("This is a Car");
+    }
+}
+
+class Maruti extends Car {
+    void brand() {
+        System.out.println("Brand is Maruti");
+    }
+}
+
+class Alto extends Maruti {
+    void model() {
+        System.out.println("Model is Alto");
+    }
+
+    public static void main(String args[]) {
+        Alto obj = new Alto();
+        obj.carType();
+        obj.brand();
+        obj.model();
+    }
+}
+
+
+Output:
+
+This is a Car
+Brand is Maruti
+Model is Alto
+
+
+Explanation:
+In multilevel inheritance, a class inherits from another class which itself is derived from another class.

@@ -1,0 +1,132 @@
+WEEK – 7
+Question 1
+
+Question:
+Write a Java program to show the application of the super keyword to access a superclass data member.
+
+Program:
+
+class Parent {
+    int x = 10;
+}
+
+class Child extends Parent {
+    int x = 20;
+
+    void display() {
+        System.out.println("Parent x = " + super.x);
+        System.out.println("Child x = " + x);
+    }
+
+    public static void main(String args[]) {
+        Child obj = new Child();
+        obj.display();
+    }
+}
+
+
+Output:
+
+Parent x = 10
+Child x = 20
+
+
+Explanation:
+The super keyword is used to access the parent class variable when both parent and child have variables with the same name.
+
+Question 2
+
+Question:
+Write a Java program to show the application of the super keyword to access a superclass constructor.
+
+Program:
+
+class Parent {
+    Parent() {
+        System.out.println("Parent class constructor");
+    }
+}
+
+class Child extends Parent {
+    Child() {
+        super();
+        System.out.println("Child class constructor");
+    }
+
+    public static void main(String args[]) {
+        Child obj = new Child();
+    }
+}
+
+
+Output:
+
+Parent class constructor
+Child class constructor
+
+
+Explanation:
+The super() call is used to invoke the parent class constructor.
+
+Question 3
+
+Question:
+Define a class Dimension. Create two subclasses Rectangle and Triangle.
+Using method overriding, find the area of Rectangle and Triangle.
+
+Program:
+
+class Dimension {
+    int a, b;
+
+    Dimension(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+    void area() {
+        System.out.println("Area not defined");
+    }
+}
+
+class Rectangle extends Dimension {
+
+    Rectangle(int l, int b) {
+        super(l, b);
+    }
+
+    void area() {
+        System.out.println("Area of Rectangle = " + (a * b));
+    }
+}
+
+class Triangle extends Dimension {
+
+    Triangle(int base, int height) {
+        super(base, height);
+    }
+
+    void area() {
+        System.out.println("Area of Triangle = " + (0.5 * a * b));
+    }
+}
+
+class Main {
+    public static void main(String args[]) {
+        Rectangle r = new Rectangle(5, 4);
+        Triangle t = new Triangle(6, 3);
+
+        r.area();
+        t.area();
+    }
+}
+
+
+Output:
+
+Area of Rectangle = 20
+Area of Triangle = 9.0
+
+
+Explanation:
+Method overriding allows a subclass to provide its own implementation of a method defined in the parent class.

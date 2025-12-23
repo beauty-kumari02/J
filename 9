@@ -1,0 +1,96 @@
+WEEK – 9
+Question 1
+
+Question:
+Define an interface Area. Create two classes Rectangle and Circle that implement the interface and find their areas.
+
+Program:
+
+interface Area {
+    void area();
+}
+
+class Rectangle implements Area {
+    int length = 5, breadth = 4;
+
+    public void area() {
+        System.out.println("Area of Rectangle = " + (length * breadth));
+    }
+}
+
+class Circle implements Area {
+    int radius = 3;
+
+    public void area() {
+        System.out.println("Area of Circle = " + (3.14 * radius * radius));
+    }
+}
+
+class Main {
+    public static void main(String args[]) {
+        Area a;
+
+        a = new Rectangle();
+        a.area();
+
+        a = new Circle();
+        a.area();
+    }
+}
+
+
+Output:
+
+Area of Rectangle = 20
+Area of Circle = 28.26
+
+
+Explanation:
+
+An interface contains only abstract methods.
+
+A class implements an interface using the implements keyword.
+
+The same interface reference is used to call different implementations.
+
+Question 2
+
+Question:
+Write a Java program to show the implementation of Multiple Inheritance.
+
+Program:
+
+interface A {
+    void showA();
+}
+
+interface B {
+    void showB();
+}
+
+class C implements A, B {
+    public void showA() {
+        System.out.println("Interface A method");
+    }
+
+    public void showB() {
+        System.out.println("Interface B method");
+    }
+
+    public static void main(String args[]) {
+        C obj = new C();
+        obj.showA();
+        obj.showB();
+    }
+}
+
+
+Output:
+
+Interface A method
+Interface B method
+
+
+Explanation:
+Java does not support multiple inheritance using classes, but it supports multiple inheritance using interfaces.
+A class can implement multiple interfaces at the same time.

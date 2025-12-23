@@ -1,0 +1,154 @@
+WEEK – 4
+Question 1
+
+Question:
+Design a class Volume and find the volume of Cube, Cylinder and Sphere using method overloading.
+
+Program:
+
+class Volume {
+
+    void volume(int a) {
+        System.out.println("Volume of Cube = " + (a * a * a));
+    }
+
+    void volume(int r, int h) {
+        System.out.println("Volume of Cylinder = " + (3.14 * r * r * h));
+    }
+
+    void volume(double r) {
+        System.out.println("Volume of Sphere = " + ((4.0 / 3.0) * 3.14 * r * r * r));
+    }
+
+    public static void main(String args[]) {
+        Volume v = new Volume();
+        v.volume(3);
+        v.volume(3, 5);
+        v.volume(2.0);
+    }
+}
+
+
+Output:
+
+Volume of Cube = 27
+Volume of Cylinder = 141.3
+Volume of Sphere = 33.49333333333333
+
+
+Explanation:
+Method overloading means methods with the same name but different parameters.
+
+Question 2
+
+Question:
+Implement the above program using constructor overloading.
+
+Program:
+
+class Volume {
+
+    Volume(int a) {
+        System.out.println("Volume of Cube = " + (a * a * a));
+    }
+
+    Volume(int r, int h) {
+        System.out.println("Volume of Cylinder = " + (3.14 * r * r * h));
+    }
+
+    Volume(double r) {
+        System.out.println("Volume of Sphere = " + ((4.0 / 3.0) * 3.14 * r * r * r));
+    }
+
+    public static void main(String args[]) {
+        new Volume(3);
+        new Volume(3, 5);
+        new Volume(2.0);
+    }
+}
+
+
+Output:
+
+Volume of Cube = 27
+Volume of Cylinder = 141.3
+Volume of Sphere = 33.49333333333333
+
+
+Explanation:
+Constructor overloading allows multiple constructors with different parameters.
+
+Question 3
+
+Question:
+Write a Java program to implement i) Call by Value ii) Call by Reference.
+
+Program:
+
+class CallBy {
+
+    int data = 50;
+
+    void change(int x) {
+        x = x + 10;
+    }
+
+    void changeByRef(CallBy obj) {
+        obj.data = obj.data + 10;
+    }
+
+    public static void main(String args[]) {
+        CallBy c = new CallBy();
+
+        int x = 20;
+        c.change(x);
+        System.out.println("Call by Value = " + x);
+
+        c.changeByRef(c);
+        System.out.println("Call by Reference = " + c.data);
+    }
+}
+
+
+Output:
+
+Call by Value = 20
+Call by Reference = 60
+
+
+Explanation:
+
+Call by value does not change original value.
+
+Call by reference changes original object data.
+
+Question 4
+
+Question:
+Write a Java program to show the application of recursion.
+
+Program:
+
+class Recursion {
+
+    static int factorial(int n) {
+        if(n == 1)
+            return 1;
+        else
+            return n * factorial(n - 1);
+    }
+
+    public static void main(String args[]) {
+        int n = 5;
+        System.out.println("Factorial = " + factorial(n));
+    }
+}
+
+
+Output:
+
+Factorial = 120
+
+
+Explanation:
+A function calling itself is called recursion.

@@ -1,0 +1,103 @@
+WEEK – 5
+Question 1
+
+Question:
+Write a Java program to show the difference between public and private access specifier.
+
+Program:
+
+class AccessSpecifier {
+    public int a = 10;
+    private int b = 20;
+
+    void display() {
+        System.out.println("Public variable a = " + a);
+        System.out.println("Private variable b = " + b);
+    }
+
+    public static void main(String args[]) {
+        AccessSpecifier obj = new AccessSpecifier();
+        System.out.println("Public variable a = " + obj.a);
+        // System.out.println(obj.b);  // Error: private variable
+        obj.display();
+    }
+}
+
+
+Output:
+
+Public variable a = 10
+Public variable a = 10
+Private variable b = 20
+
+
+Explanation:
+
+Public members can be accessed from anywhere.
+
+Private members can be accessed only within the same class.
+
+Question 2
+
+Question:
+Write a Java program to show the application of the static keyword.
+
+Program:
+
+class StaticDemo {
+    static int count = 0;
+
+    StaticDemo() {
+        count++;
+    }
+
+    public static void main(String args[]) {
+        StaticDemo s1 = new StaticDemo();
+        StaticDemo s2 = new StaticDemo();
+        StaticDemo s3 = new StaticDemo();
+
+        System.out.println("Count = " + count);
+    }
+}
+
+
+Output:
+
+Count = 3
+
+
+Explanation:
+A static variable is shared among all objects of a class.
+
+Question 3
+
+Question:
+Write a Java program to show the application of an inner class.
+
+Program:
+
+class Outer {
+    int x = 10;
+
+    class Inner {
+        void show() {
+            System.out.println("Value of x = " + x);
+        }
+    }
+
+    public static void main(String args[]) {
+        Outer o = new Outer();
+        Outer.Inner i = o.new Inner();
+        i.show();
+    }
+}
+
+
+Output:
+
+Value of x = 10
+
+
+Explanation:
+An inner class is a class defined inside another class.
+It can access the data members of the outer class.

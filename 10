@@ -1,0 +1,188 @@
+WEEK – 10
+Question 1
+
+Question:
+Create two user-defined packages pkg1 and pkg2 and import both into another program which is outside the packages.
+
+Program
+
+pkg1/First.java
+
+package pkg1;
+
+public class First {
+    public void show() {
+        System.out.println("This is pkg1 class");
+    }
+}
+
+
+pkg2/Second.java
+
+package pkg2;
+
+public class Second {
+    public void display() {
+        System.out.println("This is pkg2 class");
+    }
+}
+
+
+Main.java
+
+import pkg1.First;
+import pkg2.Second;
+
+class Main {
+    public static void main(String args[]) {
+        First f = new First();
+        Second s = new Second();
+
+        f.show();
+        s.display();
+    }
+}
+
+Output
+This is pkg1 class
+This is pkg2 class
+
+Explanation:
+
+Two user-defined packages are created and imported into another program using the import keyword.
+
+Question 2
+
+Question:
+Create multiple packages containing classes with identical names.
+
+Program
+
+pkg1/Test.java
+
+package pkg1;
+
+public class Test {
+    public void show() {
+        System.out.println("Test class from pkg1");
+    }
+}
+
+
+pkg2/Test.java
+
+package pkg2;
+
+public class Test {
+    public void show() {
+        System.out.println("Test class from pkg2");
+    }
+}
+
+
+Main.java
+
+class Main {
+    public static void main(String args[]) {
+        pkg1.Test t1 = new pkg1.Test();
+        pkg2.Test t2 = new pkg2.Test();
+
+        t1.show();
+        t2.show();
+    }
+}
+
+Output
+Test class from pkg1
+Test class from pkg2
+
+Explanation:
+
+Same class names can exist in different packages and are accessed using package name + class name.
+
+Question 3
+
+Question:
+Show how a protected variable of one package can be accessed in a subclass of another package.
+
+Program
+
+pkg1/Base.java
+
+package pkg1;
+
+public class Base {
+    protected int x = 10;
+}
+
+
+pkg2/Derived.java
+
+package pkg2;
+import pkg1.Base;
+
+public class Derived extends Base {
+    public static void main(String args[]) {
+        Derived d = new Derived();
+        System.out.println("Protected variable x = " + d.x);
+    }
+}
+
+Output
+Protected variable x = 10
+
+Explanation:
+
+A protected variable can be accessed in another package only through inheritance.
+
+Question 4
+
+Question:
+Show how to add multiple public classes to a single package.
+
+Program
+
+mypkg/ClassA.java
+
+package mypkg;
+
+public class ClassA {
+    public void showA() {
+        System.out.println("This is Class A");
+    }
+}
+
+
+mypkg/ClassB.java
+
+package mypkg;
+
+public class ClassB {
+    public void showB() {
+        System.out.println("This is Class B");
+    }
+}
+
+
+Main.java
+
+import mypkg.ClassA;
+import mypkg.ClassB;
+
+class Main {
+    public static void main(String args[]) {
+        ClassA a = new ClassA();
+        ClassB b = new ClassB();
+
+        a.showA();
+        b.showB();
+    }
+}
+
+Output
+This is Class A
+This is Class B
+
+Explanation:
+
+A single package can contain multiple public classes, each saved in a separate file.

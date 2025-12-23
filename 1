@@ -1,0 +1,81 @@
+WEEK – 1
+Question 1
+
+Question:
+Write a Java program to print “Hello, GNIT”.
+
+Program:
+
+class HelloGNIT {
+    public static void main(String args[]) {
+        System.out.println("Hello, GNIT");
+    }
+}
+
+
+Output:
+
+Hello, GNIT
+
+
+Explanation:
+System.out.println() prints the given message on the screen.
+
+Question 2
+
+Question:
+Write a Java program to check whether a given number is even or odd.
+
+Program:
+
+class EvenOdd {
+    public static void main(String args[]) {
+        int num = 10;
+
+        if(num % 2 == 0)
+            System.out.println("Even Number");
+        else
+            System.out.println("Odd Number");
+    }
+}
+
+
+Output:
+
+Even Number
+
+
+Explanation:
+If a number is divisible by 2 (remainder 0), it is even; otherwise, it is odd.
+
+Question 3
+
+Question:
+Write a Java program to find the roots of a quadratic equation.
+
+Program:
+
+class QuadraticEquation {
+    public static void main(String args[]) {
+        int a = 1, b = -5, c = 6;
+        double d, r1, r2;
+
+        d = b * b - 4 * a * c;
+        r1 = (-b + Math.sqrt(d)) / (2 * a);
+        r2 = (-b - Math.sqrt(d)) / (2 * a);
+
+        System.out.println("Root 1 = " + r1);
+        System.out.println("Root 2 = " + r2);
+    }
+}
+
+
+Output:
+
+Root 1 = 3.0
+Root 2 = 2.0
+
+
+​
+
+	​

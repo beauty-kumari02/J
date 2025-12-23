@@ -1,0 +1,145 @@
+Week 13 – Java Applet Programs
+1) Applet to display a simple message
+
+Question: Develop an applet that displays a simple message like "Hello, Welcome to Java Applet!".
+
+Program:
+
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class SimpleMessageApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawString("Hello, Welcome to Java Applet!", 50, 50);
+    }
+}
+
+
+Explanation:
+
+Applet class is used to create Java applets.
+
+paint(Graphics g) method is called automatically when the applet is run.
+
+drawString(String str, int x, int y) displays the string on the applet at coordinates (x, y).
+
+Output:
+A window will open with the text:
+"Hello, Welcome to Java Applet!" at position (50,50).
+
+HTML file to run applet:
+
+<html>
+<body>
+<applet code="SimpleMessageApplet.class" width="300" height="100"></applet>
+</body>
+</html>
+
+2) Applet to add two integer numbers
+
+Question: Develop an applet that adds two integer numbers and displays the result.
+
+Program:
+
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class AddTwoNumbersApplet extends Applet {
+    int num1 = 10;
+    int num2 = 20;
+    int sum;
+
+    public void init() {
+        sum = num1 + num2; // Adding two numbers
+    }
+
+    public void paint(Graphics g) {
+        g.drawString("Number 1: " + num1, 50, 50);
+        g.drawString("Number 2: " + num2, 50, 70);
+        g.drawString("Sum: " + sum, 50, 90);
+    }
+}
+
+
+Explanation:
+
+init() method initializes the variables (runs when applet starts).
+
+paint(Graphics g) displays the numbers and their sum.
+
+sum = num1 + num2 performs addition.
+
+Output:
+The applet will display:
+
+Number 1: 10
+Number 2: 20
+Sum: 30
+
+
+HTML file to run applet:
+
+<html>
+<body>
+<applet code="AddTwoNumbersApplet.class" width="300" height="150"></applet>
+</body>
+</html>
+
+3) Applet to draw lines, rectangle, and oval
+
+Question: Develop an applet that draws lines, rectangles, and ovals.
+
+Program:
+
+import java.applet.Applet;
+import java.awt.Graphics;
+import java.awt.Color;
+
+public class DrawShapesApplet extends Applet {
+    public void paint(Graphics g) {
+        // Draw a line from (20,20) to (200,20)
+        g.drawLine(20, 20, 200, 20);
+
+        // Draw a rectangle at (50,50) with width 150 and height 80
+        g.drawRect(50, 50, 150, 80);
+
+        // Draw an oval inside rectangle at (50,150) with width 150 and height 80
+        g.drawOval(50, 150, 150, 80);
+
+        // Optional: add some color
+        g.setColor(Color.RED);
+        g.drawString("Line, Rectangle and Oval", 50, 260);
+    }
+}
+
+
+Explanation:
+
+drawLine(x1, y1, x2, y2) draws a straight line.
+
+drawRect(x, y, width, height) draws a rectangle.
+
+drawOval(x, y, width, height) draws an oval that fits inside the rectangle defined by x, y, width, and height.
+
+setColor(Color.RED) changes the color of the subsequent drawing.
+
+Output:
+
+A line at the top.
+
+A rectangle below the line.
+
+An oval below the rectangle.
+
+Text "Line, Rectangle and Oval" in red color.
+
+HTML file to run applet:
+
+<html>
+<body>
+<applet code="DrawShapesApplet.class" width="300" height="300"></applet>
+</body>
+</html>
+
+
+✅ All three applets are ready to run in a browser or applet viewer.
